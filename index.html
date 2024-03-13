@@ -8,45 +8,6 @@
     <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-    <div class="challenge__container">
-        <h1 class="text-center challenge__header">Guess the Number (1-100)</h1>
-
-        <input type="number" id="guessInput" class="form-control" placeholder="Enter your number!" autofocus/>
-
-        <button id="guessButton" class="btn btn-primary btn-block mt-4">Submit Guess</button>
-
-        <button id="resetButton" onclick="resetGame()" class="btn btn-secondary btn-block mt-4">Reset Game</button>
-        <p id="feedback" class="mt-3 text-center"></p>
-    </div>
-
-    <script>
-        const secretNumber = Math.floor(Math.random() * 100) + 1;
-        let attempts = 0;
-
-        document.getElementById('guessButton').addEventListener('click', () => {
-            const userGuess = parseInt(document.getElementById('guessInput').value);
-
-            attempts++;
-
-            if (userGuess === secretNumber) {
-                document.getElementById('feedback').textContent = `Correct! Attempts: ${attempts}`;
-                document.getElementById('guessButton').disabled = true;
-                document.getElementById('guessInput').value = 0;
-            }
-            
-            else if (userGuess < secretNumber) {
-                document.getElementById('feedback').textContent = `Higher! Attempts: ${attempts}`;
-            }
-            
-            else if (userGuess > secretNumber) {
-                document.getElementById('feedback').textContent = `Lower! Attempts: ${attempts}`;
-            }
-        })
-
-        function resetGame() {
-            const resetButton = document.getElementById('resetButton');
-            window.location.reload();
-        }
-    </script>
+    
 </body>
 </html>
